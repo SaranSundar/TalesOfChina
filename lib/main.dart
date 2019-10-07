@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Montserrat',
           textTheme: TextTheme(
             title: TextStyle(fontSize: 36.0, fontWeight: FontWeight.w300, color: Colors.white),
+            body2: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w400, color: Colors.black),
+            subtitle: TextStyle(fontSize: 14.5, fontWeight: FontWeight.w300, color: Colors.black)
           )),
       initialRoute: "/",
       routes: {"/": (context) => Home()},
