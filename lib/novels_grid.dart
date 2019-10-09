@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:tales_of_china/chapter_view_arguments.dart';
 
 class NovelsGrid extends StatefulWidget {
   @override
@@ -34,14 +36,19 @@ class _NovelsGridState extends State<NovelsGrid> {
       padding: EdgeInsets.all(5),
       child: Material(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, "/chapter-view",
+                arguments: ChapterViewArguments("Elite Marriage", "", 0, 0));
+          },
           child: Container(
             child: Column(
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.circular(5),
-                  child: Image.network(
-                    "https://img.webnovel.com/bookcover/11257419905314505/150/150.jpg",
+                  child: CachedNetworkImage(
+                    placeholder: (context, url) => CircularProgressIndicator(),
+                    imageUrl:
+                        "https://img.webnovel.com/bookcover/11257419905314505/150/150.jpg",
                   ),
                 ),
                 Container(
