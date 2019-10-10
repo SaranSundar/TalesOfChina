@@ -20,17 +20,6 @@ class _NovelsGridState extends State<NovelsGrid> {
     );
   }
 
-  void clicked(BuildContext context, menu) {
-    final scaffold = Scaffold.of(context);
-    scaffold.showSnackBar(
-      SnackBar(
-        content: Text(menu),
-        action: SnackBarAction(
-            label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
-      ),
-    );
-  }
-
   Widget createUITile(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
